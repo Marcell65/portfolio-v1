@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Professional | Senior Web Developer</title>
-    <meta name="description" content="Portfolio Web Developer Profesional - Membangun solusi digital modern.">
     
+    <title>Marcell | Full-stack Web Developer & Database Specialist</title>
+    <meta name="description" content="Marcell adalah Web Developer profesional spesialis sistem inventaris, PHP, dan MySQL. Membangun dashboard manajemen data yang efisien dan responsif.">
+    <meta name="keywords" content="Marcell, Web Developer, PHP Developer Indonesia, Sistem Inventaris, Dashboard Database, Jasa Website">
+    
+    <meta property="og:title" content="Portfolio Marcell - Web Developer">
+    <meta property="og:description" content="Turning Ideas into Reality. Spesialis Dashboard & Sistem Manajemen Data.">
+    <meta property="og:image" content="https://ui-avatars.com/api/?name=Marcell&background=3b82f6&color=fff&size=512">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -23,19 +29,21 @@
             }
         }
     </script>
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
 </head>
-<body x-data="{ darkMode: false, mobileMenu: false }" :class="darkMode ? 'dark bg-slate-900' : 'bg-slate-50'" class="transition-colors duration-300">
+<body x-data="{ darkMode: false, mobileMenu: false }" :class="darkMode ? 'dark bg-slate-900' : 'bg-slate-50'" class="transition-colors duration-300 font-sans">
 
     <nav :class="darkMode ? 'bg-slate-900/80 border-slate-800' : 'bg-white/80 border-slate-200'" class="fixed w-full z-50 backdrop-blur-md border-b">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-black tracking-tighter" :class="darkMode ? 'text-white' : 'text-slate-900'">
-                DEV<span class="text-primary">.</span>SOLO
+            <div class="text-2xl font-black tracking-tighter uppercase" :class="darkMode ? 'text-white' : 'text-slate-900'">
+                Marcell<span class="text-primary">.</span>Dev
             </div>
             
             <div class="hidden md:flex items-center space-x-8 font-medium" :class="darkMode ? 'text-slate-300' : 'text-slate-600'">
                 <a href="#home" class="hover:text-primary transition">Home</a>
                 <a href="#about" class="hover:text-primary transition">About</a>
-                <a href="#services" class="hover:text-primary transition">Services</a>
                 <a href="#projects" class="hover:text-primary transition">Work</a>
                 <a href="#contact" class="hover:text-primary transition">Contact</a>
                 <button @click="darkMode = !darkMode" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 transition">
@@ -48,208 +56,185 @@
             </button>
         </div>
 
-        <div x-show="mobileMenu" x-transition class="md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-6 py-4 space-y-4">
-            <a href="#home" class="block dark:text-white">Home</a>
-            <a href="#projects" class="block dark:text-white">Work</a>
-            <a href="#contact" class="block dark:text-white">Contact</a>
+        <div x-show="mobileMenu" x-cloak class="md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-6 py-6 space-y-4 shadow-xl">
+            <a href="#home" @click="mobileMenu = false" class="block font-bold dark:text-white">Home</a>
+            <a href="#about" @click="mobileMenu = false" class="block font-bold dark:text-white">About</a>
+            <a href="#projects" @click="mobileMenu = false" class="block font-bold dark:text-white">Work</a>
+            <a href="#contact" @click="mobileMenu = false" class="block font-bold dark:text-white">Contact</a>
         </div>
     </nav>
 
-    <section id="home" class="pt-40 pb-20 px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-            <div class="flex-1 text-center md:text-left">
-                <span class="inline-block px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary text-sm font-bold mb-6">Tersedia untuk Proyek Baru</span>
+    <section id="home" class="pt-48 pb-24 px-6 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="flex-1 text-center md:text-left z-10">
+                <span class="inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary text-xs font-black mb-6 uppercase tracking-widest italic">Tersedia untuk Freelance</span>
                 <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight dark:text-white">
                     Turning Ideas into <span class="text-primary italic">Reality.</span>
                 </h1>
-                <p class="text-lg md:text-xl text-slate-500 dark:text-slate-400 mb-10 leading-relaxed">
-                    Saya seorang Web Developer spesialis JavaScript & Cloud Engineering yang membangun produk digital yang cepat dan berdampak besar.
+                <p class="text-lg md:text-xl text-slate-500 dark:text-slate-400 mb-10 leading-relaxed max-w-2xl">
+                    Halo, saya <b>Marcell</b>. Seorang Web Developer yang fokus membangun aplikasi manajemen data dan sistem dashboard yang efisien menggunakan PHP & Modern CSS.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
                     <a href="#projects" class="bg-primary hover:bg-blue-700 text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-blue-500/30 transition-all active:scale-95 text-center">
-                        Lihat Proyek Saya
+                        Lihat Portofolio
                     </a>
-                    <a href="#" class="border-2 border-slate-300 dark:border-slate-700 dark:text-white px-10 py-4 rounded-xl font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all text-center">
-                        Download CV <i class="fas fa-download ml-2 text-sm"></i>
+                    <a href="#contact" class="border-2 border-slate-300 dark:border-slate-700 dark:text-white px-10 py-4 rounded-xl font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all text-center">
+                        Hubungi Saya
                     </a>
                 </div>
             </div>
             <div class="flex-1 relative">
-                <div class="w-64 h-64 md:w-80 md:h-80 bg-primary rounded-3xl rotate-6 absolute -bottom-4 -right-4 opacity-20"></div>
-                <img src="https://ui-avatars.com/api/?name=User&background=3b82f6&color=fff&size=512" alt="Avatar" class="w-64 h-64 md:w-80 md:h-80 rounded-3xl shadow-2xl relative z-10 border-8 border-white dark:border-slate-800">
+                <div class="w-64 h-64 md:w-80 md:h-80 bg-primary rounded-[3rem] rotate-12 absolute -bottom-6 -right-6 opacity-20 blur-2xl"></div>
+                <img src="https://ui-avatars.com/api/?name=Marcell&background=3b82f6&color=fff&size=512" alt="Marcell Profile" class="w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] shadow-2xl relative z-10 border-8 border-white dark:border-slate-800 transform -rotate-3 hover:rotate-0 transition duration-500">
             </div>
         </div>
     </section>
 
-    <section class="py-12 bg-white dark:bg-slate-800/50 border-y border-slate-200 dark:border-slate-800">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-                <div class="text-4xl font-bold text-primary mb-2">5+</div>
-                <div class="text-sm font-medium text-slate-500 uppercase tracking-widest">Tahun Pengalaman</div>
-            </div>
-            <div>
-                <div class="text-4xl font-bold text-primary mb-2">50+</div>
-                <div class="text-sm font-medium text-slate-500 uppercase tracking-widest">Proyek Selesai</div>
-            </div>
-            <div>
-                <div class="text-4xl font-bold text-primary mb-2">20+</div>
-                <div class="text-sm font-medium text-slate-500 uppercase tracking-widest">Klien Puas</div>
-            </div>
-            <div>
-                <div class="text-4xl font-bold text-primary mb-2">99%</div>
-                <div class="text-sm font-medium text-slate-500 uppercase tracking-widest">Uptime Rate</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-24 px-6 bg-slate-50 dark:bg-slate-900">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
-            <div>
-                <h2 class="text-3xl font-bold mb-8 dark:text-white flex items-center">
-                    <i class="fas fa-briefcase mr-4 text-primary text-2xl"></i> Pengalaman Kerja
-                </h2>
-                <div class="space-y-8 border-l-2 border-slate-200 dark:border-slate-800 pl-8 ml-4">
-                    <div class="relative">
-                        <div class="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-white dark:border-slate-900"></div>
-                        <h4 class="font-bold text-lg dark:text-white text-primary">Senior Full-stack Developer</h4>
-                        <p class="text-sm text-slate-400 mb-2">Tech Corp Indonesia • 2021 - Sekarang</p>
-                        <p class="text-slate-600 dark:text-slate-400">Memimpin tim 5 orang untuk memigrasi infrastruktur ke AWS dan membangun microservices.</p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 border-4 border-white dark:border-slate-900"></div>
-                        <h4 class="font-bold text-lg dark:text-white">Junior Web Developer</h4>
-                        <p class="text-sm text-slate-400 mb-2">Creative Studio • 2019 - 2021</p>
-                        <p class="text-slate-600 dark:text-slate-400">Mengembangkan 20+ landing page responsif menggunakan HTML/CSS dan Vue.js.</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h2 class="text-3xl font-bold mb-8 dark:text-white flex items-center">
-                    <i class="fas fa-graduation-cap mr-4 text-primary text-2xl"></i> Pendidikan & Skill
-                </h2>
-                <div class="space-y-6">
-                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
-                        <h4 class="font-bold dark:text-white">S1 Teknik Informatika</h4>
-                        <p class="text-sm text-slate-500">Universitas Teknologi Indonesia • 2015 - 2019</p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-blue-50 dark:bg-slate-800 p-4 rounded-xl text-center">
-                            <i class="fab fa-react text-blue-500 text-3xl mb-2"></i>
-                            <div class="text-sm font-bold dark:text-white uppercase">Frontend</div>
-                        </div>
-                        <div class="bg-green-50 dark:bg-slate-800 p-4 rounded-xl text-center">
-                            <i class="fab fa-node-js text-green-500 text-3xl mb-2"></i>
-                            <div class="text-sm font-bold dark:text-white uppercase">Backend</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-24 px-6" x-data="{ filter: 'all' }">
+    <section id="about" class="py-24 px-6 bg-slate-100/50 dark:bg-slate-900/50">
         <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-                <div>
-                    <h2 class="text-4xl font-bold mb-4 dark:text-white">Portofolio Proyek</h2>
-                    <p class="text-slate-500 dark:text-slate-400">Hasil karya terbaik yang saya bangun dengan dedikasi.</p>
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-bold dark:text-white uppercase tracking-tighter">Tentang <span class="text-primary italic">Saya</span></h2>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+                        Saya adalah seorang pengembang web yang memiliki spesialisasi dalam membangun sistem manajemen data yang kompleks. Dengan pengalaman menggunakan <span class="font-bold text-slate-800 dark:text-white underline decoration-primary">PHP dan MySQL</span>, saya fokus pada pembuatan aplikasi yang efisien dan aman.
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Keahlian utama saya meliputi pengembangan <span class="italic text-primary font-medium">Dashboard Inventaris</span>, integrasi sistem laporan, dan optimasi query database untuk performa aplikasi yang maksimal melalui lingkungan kerja XAMPP hingga deployment cloud.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-3 pt-4">
+                        <span class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold dark:text-slate-300 shadow-sm transition hover:border-primary">🐘 PHP & Laravel</span>
+                        <span class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold dark:text-slate-300 shadow-sm transition hover:border-primary">🗄️ MySQL Database</span>
+                        <span class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold dark:text-slate-300 shadow-sm transition hover:border-primary">🎨 Tailwind CSS</span>
+                        <span class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold dark:text-slate-300 shadow-sm transition hover:border-primary">🚀 Cloud Deployment</span>
+                    </div>
                 </div>
-                <div class="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-lg self-start">
-                    <button @click="filter = 'all'" :class="filter === 'all' ? 'bg-white dark:bg-slate-700 shadow-sm text-primary' : 'text-slate-500'" class="px-6 py-2 rounded-md font-bold transition duration-300">All</button>
-                    <button @click="filter = 'web'" :class="filter === 'web' ? 'bg-white dark:bg-slate-700 shadow-sm text-primary' : 'text-slate-500'" class="px-6 py-2 rounded-md font-bold transition duration-300">Web</button>
-                    <button @click="filter = 'mobile'" :class="filter === 'mobile' ? 'bg-white dark:bg-slate-700 shadow-sm text-primary' : 'text-slate-500'" class="px-6 py-2 rounded-md font-bold transition duration-300">Mobile</button>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700 text-center group hover:bg-primary transition duration-300">
+                        <div class="text-3xl font-black text-primary group-hover:text-white mb-1">10+</div>
+                        <div class="text-[10px] uppercase tracking-widest font-bold text-slate-400 group-hover:text-white/80">Proyek Database</div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700 text-center group hover:bg-primary transition duration-300">
+                        <div class="text-3xl font-black text-primary group-hover:text-white mb-1">99%</div>
+                        <div class="text-[10px] uppercase tracking-widest font-bold text-slate-400 group-hover:text-white/80">Keamanan Data</div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700 text-center group hover:bg-primary transition duration-300">
+                        <div class="text-3xl font-black text-primary group-hover:text-white mb-1">FAST</div>
+                        <div class="text-[10px] uppercase tracking-widest font-bold text-slate-400 group-hover:text-white/80">Optimasi Query</div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700 text-center group hover:bg-primary transition duration-300">
+                        <div class="text-3xl font-black text-primary group-hover:text-white mb-1">UI/UX</div>
+                        <div class="text-[10px] uppercase tracking-widest font-bold text-slate-400 group-hover:text-white/80">Design Modern</div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div x-show="filter === 'all' || filter === 'web'" x-transition 
-                     class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-lg border border-slate-100 dark:border-slate-700 group">
-                    <div class="relative overflow-hidden h-64 bg-slate-200">
-                        <img src="https://images.unsplash.com/photo-1551288049-bbda38a10ad5?q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                        <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center space-x-4">
-                            <a href="#" class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary hover:scale-110 transition"><i class="fas fa-link"></i></a>
-                            <a href="#" class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary hover:scale-110 transition"><i class="fab fa-github"></i></a>
+    <section id="projects" class="py-24 px-6 bg-white dark:bg-slate-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 dark:text-white">Proyek <span class="text-primary italic">Unggulan</span></h2>
+                <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-10">
+                <div class="bg-slate-50 dark:bg-slate-800 rounded-[2rem] overflow-hidden shadow-2xl border border-slate-100 dark:border-slate-700 group flex flex-col">
+                    <div class="relative overflow-hidden h-72">
+                        <img src="img/dashboard.jpg" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800'" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-8 opacity-0 group-hover:opacity-100 transition duration-300">
+                            <span class="text-white font-bold text-lg italic tracking-widest uppercase">Lihat Detail Proyek</span>
                         </div>
                     </div>
-                    <div class="p-8 text-center md:text-left">
-                        <div class="text-primary text-xs font-bold uppercase tracking-widest mb-2">Web Application</div>
-                        <h4 class="text-xl font-bold mb-3 dark:text-white">AI Data Analytics Dashboard</h4>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 leading-relaxed">Dashboard interaktif untuk memproses ribuan data perusahaan secara otomatis.</p>
+                    <div class="p-10 flex-1">
+                        <div class="text-primary text-xs font-black uppercase tracking-[0.2em] mb-4">Management System</div>
+                        <h4 class="text-2xl font-bold mb-4 dark:text-white">Inventory Master Dashboard v1.0</h4>
+                        <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">
+                            Sistem pengelolaan stok barang berbasis web yang mampu menangani ribuan input data secara real-time. Dilengkapi dengan sistem otentikasi admin, fitur CRUD yang aman, dan export laporan ke format PDF/Excel.
+                        </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs rounded-full font-bold">Python</span>
-                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs rounded-full font-bold">React</span>
+                            <span class="px-4 py-1.5 bg-blue-50 dark:bg-slate-700 text-primary dark:text-blue-300 text-xs rounded-full font-black">PHP 8.x</span>
+                            <span class="px-4 py-1.5 bg-blue-50 dark:bg-slate-700 text-primary dark:text-blue-300 text-xs rounded-full font-black">MySQLi</span>
+                            <span class="px-4 py-1.5 bg-blue-50 dark:bg-slate-700 text-primary dark:text-blue-300 text-xs rounded-full font-black">AdminLTE / Tailwind</span>
                         </div>
                     </div>
                 </div>
 
+                <div class="bg-slate-50 dark:bg-slate-800 rounded-[2rem] border-4 border-dashed border-slate-200 dark:border-slate-700 flex items-center justify-center p-12 text-center group">
+                    <div class="space-y-4">
+                        <div class="w-20 h-20 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition">
+                            <i class="fas fa-plus text-3xl text-slate-400"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-400 italic">Project Sedang <br>Di-Develop</h4>
+                    </div>
                 </div>
+            </div>
         </div>
     </section>
 
     <section id="contact" class="py-24 px-6 bg-slate-900 text-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -mr-32 -mt-32"></div>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -ml-48 -mt-48"></div>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center relative z-10">
             <div>
-                <h2 class="text-4xl font-bold mb-6">Siap Memulai <br><span class="text-primary underline">Proyek Baru?</span></h2>
-                <p class="text-slate-400 mb-10 leading-relaxed text-lg">
-                    Hubungi saya untuk diskusi teknis, konsultasi desain, atau sekadar menyapa. Saya biasanya merespon dalam waktu kurang dari 24 jam.
+                <h2 class="text-5xl font-extrabold mb-8 leading-tight">Mulai Bangun <br><span class="text-primary italic underline decoration-white/20">Sistem Anda?</span></h2>
+                <p class="text-slate-400 mb-12 text-lg leading-relaxed">
+                    Butuh dashboard khusus untuk bisnis Anda atau sekadar ingin bertanya teknis? Saya selalu siap untuk berdiskusi.
                 </p>
-                <div class="space-y-6">
+                <div class="space-y-8">
                     <div class="flex items-center gap-6">
-                        <div class="w-14 h-14 bg-slate-800 rounded-2xl flex items-center justify-center text-primary text-xl">
+                        <div class="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-primary text-2xl shadow-inner">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div>
-                            <div class="text-sm text-slate-500">Email</div>
-                            <div class="font-bold">zyymarcell.com</div>
+                            <div class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-1">Kirim Email</div>
+                            <div class="text-lg font-bold">zyymarcell@gmail.com</div>
                         </div>
                     </div>
                     <div class="flex items-center gap-6">
-                        <div class="w-14 h-14 bg-slate-800 rounded-2xl flex items-center justify-center text-primary text-xl">
+                        <div class="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-green-500 text-2xl shadow-inner">
                             <i class="fab fa-whatsapp"></i>
                         </div>
                         <div>
-                            <div class="text-sm text-slate-500">WhatsApp</div>
-                            <div class="font-bold">+62 858 4584 7251</div>
+                            <div class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-1">Fast Response</div>
+                            <div class="text-lg font-bold">+62 858 4584 7251</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white rounded-3xl p-8 md:p-10 text-slate-900 shadow-2xl">
-                <form action="#" method="POST" class="space-y-6">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="space-y-2">
-                            <label class="text-sm font-bold uppercase tracking-wider text-slate-500">Nama</label>
-                            <input type="text" placeholder="John Doe" class="w-full bg-slate-50 border-0 rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none transition">
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-bold uppercase tracking-wider text-slate-500">Email</label>
-                            <input type="email" placeholder="john@email.com" class="w-full bg-slate-50 border-0 rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none transition">
-                        </div>
+            <div class="bg-white rounded-[2.5rem] p-10 text-slate-900 shadow-2xl shadow-primary/20">
+                <form action="https://formspree.io/f/your-id" method="POST" class="space-y-6">
+                    <div class="space-y-2">
+                        <label class="text-xs font-black uppercase tracking-widest text-slate-400 ml-2">Nama Lengkap</label>
+                        <input type="text" name="name" placeholder="Contoh: Budi Santoso" required class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all">
                     </div>
                     <div class="space-y-2">
-                        <label class="text-sm font-bold uppercase tracking-wider text-slate-500">Pesan</label>
-                        <textarea rows="4" placeholder="Apa yang bisa saya bantu?" class="w-full bg-slate-50 border-0 rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none transition"></textarea>
+                        <label class="text-xs font-black uppercase tracking-widest text-slate-400 ml-2">Email Bisnis</label>
+                        <input type="email" name="email" placeholder="budi@perusahaan.com" required class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all">
                     </div>
-                    <button class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/30 transition active:scale-95">
-                        Kirim Pesan <i class="fas fa-paper-plane ml-2"></i>
+                    <div class="space-y-2">
+                        <label class="text-xs font-black uppercase tracking-widest text-slate-400 ml-2">Pesan Proyek</label>
+                        <textarea name="message" rows="4" placeholder="Jelaskan kebutuhan sistem Anda..." required class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white font-black py-5 rounded-2xl shadow-xl shadow-blue-500/30 transition-all active:scale-95 uppercase tracking-[0.2em]">
+                        Kirim Pesan <i class="fas fa-paper-plane ml-3"></i>
                     </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-slate-200 dark:border-slate-800 dark:bg-slate-900">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-center">
-            <div class="text-slate-500 dark:text-slate-400 text-sm">
-                &copy; 2024 YourName. Build with <span class="text-red-500">❤</span> and Tailwind CSS.
+    <footer class="py-16 bg-slate-950 text-center relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-2xl font-black text-white mb-8">MARCELL<span class="text-primary">.</span>DEV</div>
+            <div class="flex justify-center space-x-8 mb-10 text-xl">
+                <a href="#" class="text-slate-500 hover:text-white transition"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-slate-500 hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/6285845847251" class="text-slate-500 hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <div class="flex space-x-6 text-xl">
-                <a href="#" class="text-slate-400 hover:text-primary transition"><i class="fab fa-github"></i></a>
-                <a href="#" class="text-slate-400 hover:text-primary transition"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="text-slate-400 hover:text-primary transition"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-slate-400 hover:text-primary transition"><i class="fab fa-dribbble"></i></a>
+            <div class="text-slate-600 text-xs font-bold uppercase tracking-[0.3em]">
+                &copy; 2026 Marcell. Crafted with <span class="text-blue-500 italic">PHP & Tailwind</span>.
             </div>
         </div>
     </footer>
