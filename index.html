@@ -6,7 +6,8 @@
     
     <meta name="google-site-verification" content="Ubdp1KStE2mw1NRtRYE08_fZU7bubSEnlvEOHM2USgs" />
 
-    <title>Marcell | Web Developer Portfolio</title>
+    <title>Marcell | Full-stack Web Developer</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,56 +15,84 @@
     <script>
         tailwind.config = {
             darkMode: 'class',
-            theme: { extend: { colors: { primary: '#3b82f6' } } }
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        dark: '#0f172a',
+                    }
+                }
+            }
         }
     </script>
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
 </head>
-<body x-data="{ darkMode: false }" :class="darkMode ? 'dark bg-slate-900' : 'bg-slate-50'" class="transition-colors duration-300">
+<body x-data="{ darkMode: false, mobileMenu: false }" :class="darkMode ? 'dark bg-slate-900' : 'bg-slate-50'" class="transition-colors duration-300 font-sans">
 
-    <nav class="fixed w-full z-50 backdrop-blur-md border-b dark:border-slate-800 bg-white/80 dark:bg-slate-900/80">
+    <nav :class="darkMode ? 'bg-slate-900/80 border-slate-800' : 'bg-white/80 border-slate-200'" class="fixed w-full z-50 backdrop-blur-md border-b">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-black uppercase dark:text-white">Marcell<span class="text-primary">.</span>Dev</div>
-            <button @click="darkMode = !darkMode" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800">
-                <i :class="darkMode ? 'fas fa-sun text-yellow-400' : 'fas fa-moon text-slate-600'"></i>
-            </button>
+            <div class="text-2xl font-black tracking-tighter uppercase" :class="darkMode ? 'text-white' : 'text-slate-900'">
+                Marcell<span class="text-primary">.</span>Dev
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8 font-medium" :class="darkMode ? 'text-slate-300' : 'text-slate-600'">
+                <a href="#home" class="hover:text-primary transition">Home</a>
+                <a href="#about" class="hover:text-primary transition">About</a>
+                <a href="#projects" class="hover:text-primary transition">Work</a>
+                <a href="#contact" class="hover:text-primary transition">Contact</a>
+                <button @click="darkMode = !darkMode" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 transition">
+                    <i :class="darkMode ? 'fas fa-sun text-yellow-400' : 'fas fa-moon text-slate-600'"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <section class="pt-48 pb-24 px-6">
+    <section id="home" class="pt-48 pb-24 px-6 relative overflow-hidden">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
-            <div class="flex-1 text-center md:text-left">
-                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 dark:text-white">
+            <div class="flex-1 text-center md:text-left z-10">
+                <span class="inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary text-xs font-black mb-6 uppercase tracking-widest italic">Tersedia untuk Freelance</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight dark:text-white">
                     Turning Ideas into <span class="text-primary italic">Reality.</span>
                 </h1>
-                <p class="text-lg text-slate-500 dark:text-slate-400 mb-10">
-                    Halo, saya <b>Marcell</b>. Web Developer spesialis PHP & MySQL.
+                <p class="text-lg md:text-xl text-slate-500 dark:text-slate-400 mb-10 leading-relaxed max-w-2xl">
+                    Halo, saya <b>Marcell</b>. Seorang Web Developer yang fokus membangun aplikasi manajemen data dan sistem dashboard yang efisien menggunakan PHP & Modern CSS.
                 </p>
-                <a href="#contact" class="bg-primary text-white px-8 py-4 rounded-xl font-bold shadow-lg">Hubungi Saya</a>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                    <a href="#projects" class="bg-primary hover:bg-blue-700 text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-blue-500/30 transition-all active:scale-95 text-center">
+                        Lihat Portofolio
+                    </a>
+                </div>
             </div>
-            
             <div class="flex-1 relative">
                 <div class="w-64 h-64 md:w-80 md:h-80 bg-primary rounded-[3rem] rotate-12 absolute -bottom-6 -right-6 opacity-20 blur-2xl"></div>
-                <img src="foto-marcell.jpg" 
-                     alt="Marcell" 
-                     onerror="this.src='https://ui-avatars.com/api/?name=Marcell&background=3b82f6&color=fff&size=512'" 
-                     class="w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] shadow-2xl relative z-10 border-8 border-white dark:border-slate-800 object-cover">
+                <img src="my-profile.jpg" alt="Marcell Profile" onerror="this.src='https://ui-avatars.com/api/?name=Marcell&background=3b82f6&color=fff&size=512'" class="w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] shadow-2xl relative z-10 border-8 border-white dark:border-slate-800 transform -rotate-3 hover:rotate-0 transition duration-500 object-cover mx-auto">
             </div>
         </div>
     </section>
 
     <section id="projects" class="py-24 px-6 bg-white dark:bg-slate-900">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-16 text-center dark:text-white">My <span class="text-primary italic">Work</span></h2>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 dark:text-white">Proyek <span class="text-primary italic">Unggulan</span></h2>
+                <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
+            </div>
+
             <div class="grid md:grid-cols-2 gap-10">
-                <div class="bg-slate-50 dark:bg-slate-800 rounded-[2rem] overflow-hidden shadow-2xl border dark:border-slate-700">
-                    <div class="h-72 overflow-hidden">
-                        <img src="dashboard-proyek.jpg" 
-                             onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800'" 
-                             class="w-full h-full object-cover">
+                <div class="bg-slate-50 dark:bg-slate-800 rounded-[2rem] overflow-hidden shadow-2xl border border-slate-100 dark:border-slate-700 group flex flex-col">
+                    <div class="relative overflow-hidden h-72">
+                        <img src="my-dashboard.jpg" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800'" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-8 opacity-0 group-hover:opacity-100 transition duration-300">
+                            <span class="text-white font-bold text-lg italic tracking-widest uppercase text-center w-full">Lihat Detail Proyek</span>
+                        </div>
                     </div>
-                    <div class="p-10">
-                        <h4 class="text-2xl font-bold mb-4 dark:text-white">Inventory System</h4>
-                        <p class="text-slate-500 dark:text-slate-400">Dashboard manajemen database menggunakan PHP dan MySQL.</p>
+                    <div class="p-10 flex-1">
+                        <div class="text-primary text-xs font-black uppercase tracking-[0.2em] mb-4">Management System</div>
+                        <h4 class="text-2xl font-bold mb-4 dark:text-white">Inventory Master Dashboard v1.0</h4>
+                        <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">
+                            Sistem pengelolaan stok barang berbasis web yang kamu buat di localhost tadi.
+                        </p>
                     </div>
                 </div>
             </div>
