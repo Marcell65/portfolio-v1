@@ -6,8 +6,7 @@
     
     <meta name="google-site-verification" content="Ubdp1KStE2mw1NRtRYE08_fZU7bubSEnlvEOHM2USgs" />
 
-    <title>Marcell | Full-stack Web Developer & Database Specialist</title>
-    <meta name="description" content="Marcell adalah Web Developer profesional spesialis sistem inventaris, PHP, dan MySQL.">
+    <title>Marcell | Web Developer & Database Specialist</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -37,7 +36,6 @@
             <div class="text-2xl font-black tracking-tighter uppercase" :class="darkMode ? 'text-white' : 'text-slate-900'">
                 Marcell<span class="text-primary">.</span>Dev
             </div>
-            
             <div class="hidden md:flex items-center space-x-8 font-medium" :class="darkMode ? 'text-slate-300' : 'text-slate-600'">
                 <a href="#home" class="hover:text-primary transition">Home</a>
                 <a href="#about" class="hover:text-primary transition">About</a>
@@ -47,7 +45,6 @@
                     <i :class="darkMode ? 'fas fa-sun text-yellow-400' : 'fas fa-moon text-slate-600'"></i>
                 </button>
             </div>
-
             <button @click="mobileMenu = !mobileMenu" class="md:hidden text-2xl" :class="darkMode ? 'text-white' : 'text-slate-900'">
                 <i class="fas fa-bars"></i>
             </button>
@@ -69,6 +66,7 @@
                     <a href="#contact" class="border-2 border-slate-300 dark:border-slate-700 dark:text-white px-10 py-4 rounded-xl font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all text-center">Hubungi Saya</a>
                 </div>
             </div>
+            
             <div class="flex-1 relative">
                 <div class="w-64 h-64 md:w-80 md:h-80 bg-primary rounded-[3rem] rotate-12 absolute -bottom-6 -right-6 opacity-20 blur-2xl"></div>
                 <img src="profile-marcell.jpg" alt="Marcell Profile" onerror="this.src='https://ui-avatars.com/api/?name=Marcell&background=3b82f6&color=fff&size=512'" class="w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] shadow-2xl relative z-10 border-8 border-white dark:border-slate-800 transform -rotate-3 hover:rotate-0 transition duration-500 object-cover">
@@ -88,14 +86,14 @@
                     <div class="relative overflow-hidden h-72">
                         <img src="project-dashboard.jpg" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800'" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-8 opacity-0 group-hover:opacity-100 transition duration-300">
-                            <span class="text-white font-bold text-lg italic tracking-widest uppercase">Detail Proyek Inventaris</span>
+                            <span class="text-white font-bold text-lg italic tracking-widest uppercase">Lihat Detail Proyek</span>
                         </div>
                     </div>
                     <div class="p-10 flex-1">
                         <div class="text-primary text-xs font-black uppercase tracking-[0.2em] mb-4">Management System</div>
                         <h4 class="text-2xl font-bold mb-4 dark:text-white">Inventory Master Dashboard v1.0</h4>
                         <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">
-                            Sistem pengelolaan stok barang berbasis web yang terintegrasi dengan database MySQL untuk manajemen data yang akurat.
+                            Sistem pengelolaan stok barang berbasis web dengan integrasi database MySQL yang efisien.
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span class="px-4 py-1.5 bg-blue-50 dark:bg-slate-700 text-primary dark:text-blue-300 text-xs rounded-full font-black">PHP 8.x</span>
@@ -109,49 +107,16 @@
                         <div class="w-20 h-20 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition">
                             <i class="fas fa-plus text-3xl text-slate-400"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-slate-400 italic">Project Selanjutnya <br>Coming Soon</h4>
+                        <h4 class="text-xl font-bold text-slate-400 italic">Project Sedang <br>Di-Develop</h4>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-24 px-6 bg-slate-900 text-white">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-            <div>
-                <h2 class="text-5xl font-extrabold mb-8 leading-tight">Mulai Bangun <br><span class="text-primary italic underline decoration-white/20">Sistem Anda?</span></h2>
-                <div class="space-y-8">
-                    <div class="flex items-center gap-6">
-                        <div class="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-primary text-2xl"><i class="fas fa-envelope"></i></div>
-                        <div>
-                            <div class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-1">Email</div>
-                            <div class="text-lg font-bold">zyymarcell@gmail.com</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-6">
-                        <div class="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-green-500 text-2xl"><i class="fab fa-whatsapp"></i></div>
-                        <div>
-                            <div class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-1">WhatsApp</div>
-                            <div class="text-lg font-bold">+62 858 4584 7251</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-[2.5rem] p-10 text-slate-900 shadow-2xl">
-                <form action="https://formspree.io/f/mqkapoqz" method="POST" class="space-y-6">
-                    <input type="text" name="name" placeholder="Nama Lengkap" required class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 outline-none focus:border-primary">
-                    <input type="email" name="email" placeholder="Email" required class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 outline-none focus:border-primary">
-                    <textarea name="message" rows="4" placeholder="Pesan Anda" required class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 outline-none focus:border-primary"></textarea>
-                    <button type="submit" class="w-full bg-primary text-white font-black py-5 rounded-2xl hover:bg-blue-700 transition uppercase tracking-widest">Kirim Pesan <i class="fas fa-paper-plane ml-3"></i></button>
-                </form>
             </div>
         </div>
     </section>
 
     <footer class="py-16 bg-slate-950 text-center text-white">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="text-2xl font-black mb-8 uppercase tracking-tighter">MARCELL<span class="text-primary">.</span>DEV</div>
+            <div class="text-2xl font-black mb-8">MARCELL<span class="text-primary">.</span>DEV</div>
             <div class="text-slate-600 text-xs font-bold uppercase tracking-[0.3em]">
                 &copy; 2026 Marcell. Crafted with <span class="text-blue-500 italic">PHP & Tailwind</span>.
             </div>
